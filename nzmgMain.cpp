@@ -36,11 +36,9 @@ int main () {
 	
 	//std::cout << count << std::endl;
 	  
-	for (int i = 0; i < count + 1; i+=2) {
-		double east = -1;
-		double north = -1;
-		east = vect.at(i);
-		north = vect.at(i);
+	for (int i = 0; i < count + 1; i+=2) {;
+		double east = vect.at(i);
+		double north = vect.at(i + 1);
 		//std::cout << "Northing " + std::to_string(north) << std::endl;
 		//std::cout << "Easting " + std::to_string(east) << std::endl;
 		NZMGTransform x = NZMGTransform();
