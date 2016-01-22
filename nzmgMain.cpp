@@ -48,10 +48,12 @@ int main () {
 		std::array<double, 2> b;
 
 		b = x.nzmgToNZGD1949(a);
-		//std::cout << "Latitude " + std::to_string(b[0]) << std::endl;
-		//std::cout << "Longitude " + std::to_string(b[1]) << std::endl;
-		std::cout << std::to_string(b[0]) << std::endl;
-		std::cout << std::to_string(b[1]) << std::endl;
+		if (i == count - 1) {
+			std::cout << std::to_string(b[0]) + " " + std::to_string(b[1]);
+		} else {
+			std::cout << std::to_string(b[0]) + " " + std::to_string(b[1]) + " ";
+		}
+			//std::cout << i << std::endl;
 	}
 	
 	return 0;
