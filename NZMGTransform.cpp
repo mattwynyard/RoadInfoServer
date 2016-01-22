@@ -20,7 +20,7 @@ std::array<double, 2> NZMGTransform::nzmgToNZGD1949(double *coordinate) {
 	z.real((north - N0) / NZGD1949a);
 	z.imag((east - E0) / NZGD1949a);
 	std::complex<double> theta0 =  NZMGTransform::theta0();
-	//std::complex<double> theta = thetaSuccessive(theta0, 0);
+	std::complex<double> theta = thetaSuccessive(theta0, 0);
 	std::array<double, 2> coord = calcLatLong(theta0);
 
 	return datumShift(coord);
@@ -42,8 +42,8 @@ std::complex<double> NZMGTransform::thetaSuccessive(std::complex<double> theta0,
 	for (int i = 0; i < b.size(); i++) {
 		std::complex<double> c(i,0);
 		std::complex<double> d(i + 1, 0);
-		numerator += c * b[i] * std::pow(theta0, n + 1);
-		denominator += d * b[i] * std::pow(theta0, n);
+		numerator += c * b[i] * std::pow(theta0, i + 1);
+		denominator += d * b[i] * std::pow(theta0, i);
 	}
 	numerator += z;
 	std::complex<double> theta(0, 0);
