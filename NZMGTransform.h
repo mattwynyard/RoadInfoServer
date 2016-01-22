@@ -63,7 +63,10 @@ private:
 	 */
 	std::complex<double> theta0();
 
-	/** not working at present
+	/** Recursively performs successive operation on theta0 to reduce to millimetre accuracy
+	 * param theta0 the complex number to reduce
+	 * param n the number of succesive operations
+	 * return the reduce complex number used for transform
 	 */
     std::complex<double> thetaSuccessive(std::complex<double> theta0, int n);
 
