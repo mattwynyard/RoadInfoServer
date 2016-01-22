@@ -21,7 +21,7 @@ std::array<double, 2> NZMGTransform::nzmgToNZGD1949(double *coordinate) {
 	z.imag((east - E0) / NZGD1949a);
 	std::complex<double> theta0 =  NZMGTransform::theta0();
 	std::complex<double> theta = thetaSuccessive(theta0, 0);
-	std::array<double, 2> coord = calcLatLong(theta0);
+	std::array<double, 2> coord = calcLatLong(theta);
 
 	return datumShift(coord);
 }
